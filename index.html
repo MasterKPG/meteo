@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,20 +12,83 @@
     <title>Météo Lannion</title>
 </head>
 <body>
-    <div class="carte">
-        <div class="meteo">
-            <h2 class="ville">
-                Lannion
-            </h2>
-            <h1 class="temp">
-                15°C
-            </h1>
-            <img src="" alt="" class="icone">
-            <div class="description">Ciel dégagée</div>
-            <div class="humidite">Humidité: 60%</div>
-            <div class="vent">Vitesse du vent: 15km/h</div>
+    <div class="group">
+        <svg class="icon-search" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+        <input placeholder="Ville" type="search" class="input">
+      </div>
+    </div>
+    <div class="container">
+        <div class="carte">
+            <div class="meteo">
+                <h3 class="ville">Lannion</h3>
+                <div class="temp-icone">
+                    <h1 class="temp">15°C</h1>
+                    <img src="" alt="" class="icone">
+                </div>
+                <div class="description">Clear</div>
+                <div class="humidite">
+                    <img src="./Images/icones/humidity.png" alt="" class="icone-small">
+                    <div class="humidite-txt">Humidité: 50%</div>
+                </div>
+                <div class="vent">
+                    <img src="./Images/icones/wind.png" alt="" class="icone-small">
+                    <div class="vent-txt">Vent: 10km/h</div>
+                </div>
+            </div>
+        </div>
+        <div class="graphe-carte">
+            <canvas id="temperatureGraph"></canvas>
         </div>
     </div>
-
+    <div class="cartes-previsions">
+        <div class="carte-prevision">
+            <div class="day-icon">
+                <h3 class="jour1">Lundi</h3>
+                <img src="" alt="" class="icone-small icone-small1">
+            </div>
+            <div class="temp-min1">Min: 10°C</div>
+            <div class="temp-max1">Max: 18°C</div>
+        </div>
+        <div class="carte-prevision">
+            <div class="day-icon">
+                <h3 class="jour2">Mardi</h3>
+                <img src="" alt="" class="icone-small icone-small2">
+            </div>
+            <div class="temp-min2">Min: 12°C</div>
+            <div class="temp-max2">Max: 20°C</div>
+        </div>
+        <div class="carte-prevision">
+            <div class="day-icon">
+                <h3 class="jour3">Mercredi</h3>
+                <img src="" alt="" class="icone-small icone-small3">
+            </div>
+            <div class="temp-min3">Min: 11°C</div>
+            <div class="temp-max3">Max: 19°C</div>
+        </div>
+        <div class="carte-prevision">
+            <div class="day-icon">
+                <h3 class="jour4">Jeudi</h3>
+                <img src="" alt="" class="icone-small icone-small4">
+            </div>
+            <div class="temp-min4">Min: 9°C</div>
+            <div class="temp-max4">Max: 17°C</div>
+        </div>
+        <div class="carte-prevision">
+            <div class="day-icon">
+                <h3 class="jour5">Vendredi</h3>
+                <img src="" alt="" class="icone-small icone-small5">
+            </div>
+            <div class="temp-min5">Min: 8°C</div>
+            <div class="temp-max5">Max: 16°C</div>
+        </div>
+        <div class="carte-prevision">
+            <div class="day-icon">
+                <h3 class="jour6">Samedi</h3>
+                <img src="" alt="" class="icone-small icone-small6">
+            </div>
+            <div class="temp-min6">Min: 7°C</div>
+            <div class="temp-max6">Max: 15°C</div>
+        </div>
+    </div>
 </body>
 </html>
